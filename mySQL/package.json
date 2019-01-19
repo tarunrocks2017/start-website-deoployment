@@ -11,7 +11,7 @@
     "dropDB": "node migrationScripts/sqlScripts/dropDB.js",
     "test": "DB_NAME=testDB nyc --reporter=lcov mocha tests/testMovie/*.js tests/testActor/*.js & esw -w tests/testActor/*.js tests/testMovie/*.js",
     "lint-test": "npm run watch-lint & npm test",
-    "start": "node index.js",
+    "start": "pm2 start index.js",
     "connect": "node SqlFiles/Connection.js"
   },
   "author": "",
