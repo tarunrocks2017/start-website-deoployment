@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
-    name: 'mysqlAPI',
-    script: '08-tarunharsh-microservice-project/LibraryApp/index.js',
+    name: 'mySQL',
+    script: './mySQL/index.js',
 
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
     args: 'one two',
@@ -14,18 +14,18 @@ module.exports = {
     },
     env_production: {
       NODE_ENV: 'production',
-      IP: '18.222.132.13',
+      IP: '18.220.102.66',
     },
   }],
 
   deploy: {
     production: {
-      key: '/home/tarun/Downloads/adminAPI.pem',
+      key: '/home/tarun/Downloads/admin.pem',
       user: 'ubuntu',
-      host: '18.222.132.13',
+      host: '18.220.102.66',
       ref: 'origin/master',
-      repo: 'git@gitlab.com:mountblue/dec-2018-js-backend/08-tarunharsh-microservice-project.git',
-      path: '/home/ubuntu/08-tarunharsh-microservice-project',
+      repo: 'git@gitlab.com:mountblue/dec-2018-js-backend/09-tarunharsh-deployment-project.git',
+      path: '/home/ubuntu/',
       'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
     },
   },
