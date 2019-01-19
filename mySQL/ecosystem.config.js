@@ -26,7 +26,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@gitlab.com:mountblue/dec-2018-js-backend/09-tarunharsh-deployment-project.git',
       path: '/home/ubuntu/09-tarunharsh-deployment-project/mySQL',
-      'post-deploy': 'npm install && ./node_modules/.bin/pm2 reload ecosystem.config.js --env production && npm start',
+      'post-deploy': 'pm2 reload ecosystem.config.js --env production && npm start',
     },
   },
 };
